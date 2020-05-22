@@ -7,7 +7,7 @@ export default props => {
     const rows = props.board.map((row, r) => { //trasnformando uma matriz de elementos para uma matriz de elementos JSX (Field)
 
         const columns = row.map((field, c) => {
-            return <Field {... field} key={c} /> //columns armazena todos os fields de uma linha
+            return <Field {... field} key={c} onOpen={() => props.onOpenField(r, c)} onSelect={e => props.onSelectField(r, c)} /> //columns armazena todos os fields de uma linha
         })
 
          return <View key={r} style={{flexDirection: 'row'}}>{columns}</View>
