@@ -6,6 +6,11 @@ import Flag from './Flag';
 export default props => {
     return(
         <View style={styles.container}>
+
+                <TouchableOpacity onPress={props.onLevelPress} style={styles.button}>
+                    <Text style={styles.buttonLabel}>Level</Text>
+                </TouchableOpacity>
+
             <View style={styles.flagContainer}>
                 <TouchableOpacity onPress={props.onFlagPress} style={styles.flagButton}>
                     <Flag bigger />
@@ -16,6 +21,7 @@ export default props => {
             <TouchableOpacity style={styles.button} onPress={props.onNewGame}>               
                 <Text style={styles.buttonLabel}>Novo Jogo</Text>
             </TouchableOpacity>
+
         </View>
     )
 }
@@ -24,7 +30,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: '#eee',
+        backgroundColor: '#A9A9A9',
         alignItems: 'center',
         justifyContent: 'space-around',
         paddingTop: 20,
@@ -32,6 +38,7 @@ const styles = StyleSheet.create({
     },
     flagContainer: {
         flexDirection: 'row',
+       
     },
     flagButton: {
         marginTop: 10,
@@ -42,14 +49,17 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         paddingTop: 5,
         marginLeft: 20,
+        color: '#ddd'
     },
     button: {
-        backgroundColor: '#999',
+        backgroundColor: '#1E90FF',
         padding: 5,
+        borderRadius: 13,
     },
     buttonLabel: {
         fontSize: 20,
         color: '#ddd',
         fontWeight: 'bold',
-    }
+    },
+
 })
